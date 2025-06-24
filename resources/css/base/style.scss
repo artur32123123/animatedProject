@@ -1,18 +1,22 @@
-.container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto !important;
-    padding: 0 20px;
-}
-
 * {
-    margin: 0;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-ul {
-    list-style: none;
-}
+body {
+       background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 20px;
+       color: white;
+       .container {
+           max-width: 1750px;      
+           width: 100%;
+           margin: 0 auto;
+       }
 
-a {
-    text-decoration: none;
-}
+    }

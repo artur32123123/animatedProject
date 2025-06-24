@@ -73,7 +73,7 @@ services:
         networks:
             - sail
         healthcheck:
-            test:Фреймворки, 
+            test: 
                 - CMD
                 - redis-cli
                 - ping
