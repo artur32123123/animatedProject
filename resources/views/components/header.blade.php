@@ -28,8 +28,8 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">3</span>
                 </div>
-                <button class="auth-btn register">Регистрация</button>
-                <button class="auth-btn login">Войти</button>
+                <a href="{{ route('register') }}" class="auth-btn register">Регистрация</a>
+                <a href="{{ route('login') }}" class="auth-btn login">Войти</a>
                 <div class="user-icon">
                     <i class="fas fa-user"></i>
                 </div>
@@ -66,7 +66,6 @@
             </div>
         </div>
         
-        <!-- Контент страницы (для демонстрации) -->
        
     </div>
 </body>

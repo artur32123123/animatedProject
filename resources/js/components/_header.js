@@ -45,12 +45,12 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Обработчики для кнопок авторизации
-document.querySelectorAll('.auth-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        if (button.classList.contains('login')) {
-            alert('Форма входа');
-        } else {
-            alert('Форма регистрации');
-        }
-    });
-});
+// document.querySelectorAll('.auth-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//         if (button.classList.contains('login')) {
+//             alert('Форма входа');
+//         } else {
+//             alert('Форма регистрации');
+//         }
+//     });
+// });

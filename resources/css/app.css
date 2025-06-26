@@ -1,6 +1,10 @@
-@import 'tailwindcss';
+/* @import 'tailwindcss'; */
 @import './base/style.scss';
 @import './components/_hedera.scss';
+@import './components/register.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
