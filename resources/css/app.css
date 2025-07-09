@@ -1,6 +1,7 @@
 /* @import 'tailwindcss'; */
 @import './base/style.scss';
 @import './components/_hedera.scss';
+@import './components/anime-card.scss';
 @import './components/register.scss';
 @tailwind base;
 @tailwind components;

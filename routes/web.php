@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\FigureController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Figure;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [FigureController::class, 'index'])->name('home');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

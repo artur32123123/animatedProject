@@ -2,26 +2,22 @@
 
 namespace Database\Factories;
 
-use App\Models\Figure;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Figure>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class FigureFactory extends Factory
+class FigureImagesFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-    protected $model = Figure::class;
     public function definition(): array
     {
-
         return [
-            'name' => fake()->name(),
-            'description' => fake()->name(),
+            //
         ];
     }
 }

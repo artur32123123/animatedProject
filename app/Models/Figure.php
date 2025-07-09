@@ -9,4 +9,9 @@ class Figure extends Model
 {
     /** @use HasFactory<\Database\Factories\FigureFactory> */
     use HasFactory;
+    protected $fillable = ['name', 'description'];
+     public function images()
+    {
+        return $this->hasMany(FiguresImage::class);
+    }
 }

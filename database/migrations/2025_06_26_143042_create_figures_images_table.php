@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('figures', function (Blueprint $table) {
+        Schema::create('figures_images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
+            $table->unsignedBigInteger('figure_id');
+            $table->foreign('figure_id')->references('id')->on('figures')->onDelete('cascade');
+            $table->string('src')->default('images/Figure/binzo/bz2.jpeg');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('figures');
+        Schema::dropIfExists('figures_images');
     }
 };
