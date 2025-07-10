@@ -13,11 +13,7 @@ class FigureController extends Controller
     public function index()
     {
         $figure = Figure::all();
-        // dd($figure->images()->src);
-        // foreach($figure->images() as $image){
-        //     dd($image->src);
-        // }
-        return view('home', compact('figure'));
+        return view('Figure/home', compact('figure'));
     }
 
     /**
@@ -39,9 +35,10 @@ class FigureController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        $figure = Figure::find($id);
+        return view('Figure/show', compact('figure'));
     }
 
     /**

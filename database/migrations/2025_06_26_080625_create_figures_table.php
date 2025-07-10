@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('figures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->decimal('weight', 5, 2)->default(0.0);
+            $table->string('material')->default('пластик');
+            $table->string('size')->default('20x20x20');
+            $table->integer('price')->default(0);
             $table->string('description');
             $table->timestamps();
         });
