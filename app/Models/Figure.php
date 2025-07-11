@@ -26,7 +26,12 @@ class Figure extends Model
         );
     }
 
-    protected $fillable = ['name', 'description'];
+
+    public function figureCategory() {
+        return $this->belongsTo(FigureCategory::class);
+    }
+
+    protected $fillable = ['name', 'description' , 'weight', 'material', 'size', 'discount', 'price'];
      public function images()
     {
         return $this->hasMany(FiguresImage::class);

@@ -12,7 +12,10 @@ class FigureController extends Controller
      */
     public function index()
     {
-        $figure = Figure::all();
+        // pagination
+
+        $figure = Figure::paginate(12);
+        // $figure = Figure::all();
         return view('Figure/home', compact('figure'));
     }
 
