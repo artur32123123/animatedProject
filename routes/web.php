@@ -5,7 +5,11 @@ use App\Http\Controllers\ProfileController;
 use App\Models\Figure;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [FigureController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('Figure/main');
+});
+
+Route::get('/figure', [FigureController::class, 'index'])->name('main');
 Route::get('/show/{id?}', [FigureController::class, 'show'])->name('show');
 
 

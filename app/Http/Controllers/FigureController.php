@@ -16,7 +16,7 @@ class FigureController extends Controller
 
         $figure = Figure::paginate(12);
         // $figure = Figure::all();
-        return view('Figure/home', compact('figure'));
+        return view('Figure/index', compact('figure'));
     }
 
     /**

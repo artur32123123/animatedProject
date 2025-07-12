@@ -1,0 +1,316 @@
+$dark-bg: linear-gradient(145deg, #1a1c28, #151720);
+$card-bg: rgba(30, 32, 48, 0.6);
+$border-color: rgba(113, 119, 144, 0.25);
+$primary-color: #7a6ff0;
+$accent-color: #ff486d;
+$text-primary: #e0e0ff;
+$text-secondary: #a0a0c0;
+$text-tertiary: #7a8ca8;
+$success-color: #4caf50;
+$info-color: #2196f3;
+$warning-color: #ff9800;
+$transition: all 0.3s ease;
+$border-radius: 16px;
+$section-spacing: 30px;
+
+/* Основные стили */
+.dark-filters {
+  background: $dark-bg;
+  border-radius: $border-radius;
+  padding: 25px;
+  margin-top: 49px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  backdrop-filter: blur(10px);
+  border: 1px solid #2a2d3e;
+  max-height: 1300px;
+  width: 520px;
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $border-color;
+
+    .filter-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.8rem;
+      margin: 0;
+      color: $text-primary;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+      .filter-icon {
+        width: 28px;
+        height: 28px;
+        fill: $primary-color;
+      }
+    }
+
+    .clear-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: $text-secondary;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: rgba($accent-color, 0.25);
+        color: $accent-color;
+      }
+    }
+  }
+
+  .filter-section {
+    margin-bottom: $section-spacing;
+    position: relative;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $text-primary;
+      }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        fill: $primary-color;
+      }
+    }
+
+    /* Стили для поиска */
+    .search-input {
+      width: 100%;
+      background: $card-bg;
+      border: 1px solid #3d4055;
+      border-radius: 12px;
+      padding: 14px 20px;
+      color: $text-primary;
+      font-size: 1rem;
+      transition: $transition;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+      }
+    }
+
+    /* Ценовой диапазон */
+    .price-slider-container {
+      padding: 10px 5px;
+
+      .price-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        color: $text-secondary;
+        font-size: 0.9rem;
+      }
+
+      .slider-wrapper {
+        position: relative;
+        height: 5px;
+        background: #2a2d3e;
+        border-radius: 5px;
+        margin: 30px 0;
+
+        .price-slider {
+          position: absolute;
+          width: 100%;
+          height: 5px;
+          top: 0;
+          pointer-events: none;
+          -webkit-appearance: none;
+          background: none;
+          z-index: 2;
+
+          &::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: $primary-color;
+            border: 3px solid #1a1c28;
+            cursor: pointer;
+            -webkit-appearance: none;
+            box-shadow: 0 2px 10px rgba($primary-color, 0.5);
+          }
+        }
+      }
+    }
+
+    /* Категории */
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      .category-card {
+        display: block;
+        position: relative;
+        background: $card-bg;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid $border-color;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-3px);
+          border-color: $primary-color;
+          box-shadow: 0 5px 15px rgba($primary-color, 0.3);
+        }
+
+        .card-content {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+
+          .card-name {
+            font-size: 0.95rem;
+            color: $text-primary;
+            font-weight: 500;
+          }
+
+          .card-count {
+            font-size: 0.85rem;
+            color: $text-tertiary;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    /* Бренды */
+    .brand-scroller {
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 10px;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(30, 32, 48, 0.3);
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: 3px;
+      }
+
+      .brand-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(113, 119, 144, 0.15);
+        color: $text-primary;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color;
+        }
+
+        .item-count {
+          color: $text-tertiary;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    /* Статус */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+
+      .status-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 5px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+        transition: $transition;
+        background: $card-bg;
+        border: 1px solid $border-color;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        &.in-stock:hover {
+          border-color: $success-color;
+          color: $success-color;
+        }
+
+        &.pre-order:hover {
+          border-color: $info-color;
+          color: $info-color;
+        }
+
+        &.discounted:hover {
+          border-color: $warning-color;
+          color: $warning-color;
+        }
+      }
+    }
+  }
+
+  /* Кнопка применения */
+  .apply-filters {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, $primary-color, #5a4fe0);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: $transition;
+    box-shadow: 0 4px 20px rgba($primary-color, 0.4);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 6px 25px rgba($primary-color, 0.6),
+        0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    .apply-icon {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+  }
+}
