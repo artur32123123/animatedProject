@@ -34,6 +34,7 @@ class FigureSeeder extends Seeder
                 'size' => $sizes[array_rand($sizes)],
                 'discount' => rand(0, 3) ? 0 : rand(10, 50), // 25% товаров со скидкой
                 'price' => rand(500, 15000),
+                'description' => $faker->text(150),
             ]);
         }
     }

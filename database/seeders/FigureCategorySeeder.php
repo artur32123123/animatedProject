@@ -13,6 +13,20 @@ class FigureCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        FigureCategory::factory(10)->create();
+        $titles = [
+            'Сага о винланде',
+            'атака титанов',
+            '7 смертельных врагов',
+            'наруто',
+            'синий экзорцист',
+            'титаны',
+        ];
+
+        foreach ($titles as $title) {
+            FigureCategory::factory()->create([
+                'name' => $title,
+                'description' => fake()->text(100),
+            ]);
+        }
     }
 }

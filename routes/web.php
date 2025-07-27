@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Figure/main');
 });
+// Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 Route::get('/figure', [FigureController::class, 'index'])->name('main');
 Route::get('/show/{id?}', [FigureController::class, 'show'])->name('show');
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -2,22 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FigureFilterRequest;
 use App\Models\Figure;
+use App\Models\FigureCategory;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-
+use App\Filters\FigureFilter;
+// use Illuminate\Http\Request;
 class FigureController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // pagination
+        // dd($request->all());
+        $filter = new FigureFilter();
+        $categories = FigureCategory::all();
+        $figures = Figure::filter($filter)->get();
+        dd($figures = Figure::filter($filter)->get());
+        // dd($categories);
+        return view('Figure/index', compact('figures',  'categories'));
 
-        $figure = Figure::paginate(12);
-        // $figure = Figure::all();
-        return view('Figure/index', compact('figure'));
+
+        // Или с пагинацией:
+        // return Figure::filter($filter)->paginate(20);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

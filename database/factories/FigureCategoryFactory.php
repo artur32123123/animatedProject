@@ -15,12 +15,19 @@ class FigureCategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
-        $animeFilm = ['Сага о винланде', 'атака титанов', '7 смертельных врагов', 'сага о винланде', 'атака титанов', '7 смертельных врагов'];
-        return [
-            'name' => $animeFilm[random_int(0, count($animeFilm) - 1)],
-            'description' => fake()->text(100),
+        $animeFilm = [
+            'Сага о винланде',
+            'атака титанов',
+            '7 смертельных врагов',
+            'сага о винланде',
+            'атака титанов',
+            '7 смертельных врагов'
         ];
+            return [
+                'name' => $animeFilm[random_int(0, count($animeFilm) - 1)],
+                'description' => fake()->text(100),
+            ];
     }
 }

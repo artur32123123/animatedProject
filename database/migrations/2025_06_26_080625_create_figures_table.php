@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('size')->default('20x20x20');
             $table->integer('discount')->default();
             $table->integer('price')->default(0);
-            // $table->string('description')->default("asd");
+            $table->string('description')->default('Описание');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,10 @@ class Figure extends Model
 {
     /** @use HasFactory<\Database\Factories\FigureFactory> */
     use HasFactory;
-
+    public function scopeFilter(Builder $builder, $filter): Builder
+    {
+        return $filter->apply($builder);
+    }
     protected function name(): Attribute
     {
         return Attribute::make(
@@ -45,7 +49,7 @@ class Figure extends Model
         return $this->belongsTo(FigureCategory::class);
     }
 
-    protected $fillable = ['name', 'label', 'weight', 'material', 'size', 'discount', 'price'];
+    protected $fillable = ['name', 'label', 'weight', 'material', 'size', 'discount', 'price', 'description'];
     public function images()
     {
         return $this->hasMany(FiguresImage::class);

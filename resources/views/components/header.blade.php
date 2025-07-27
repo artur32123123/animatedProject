@@ -1,7 +1,7 @@
 
     <div class="container">
         <header id="header">
-            <a href="" class="logo">
+            <a href="/" class="logo">
                 <i class="fas fa-dragon logo-icon"></i>
                 <span class="logo-text">AnimeFigShop</span>
             </a>
@@ -16,13 +16,13 @@
             </nav>
 
             <div class="auth-buttons">
-                <div class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">3</span>
-                </div>
                 <a href="{{ route('register') }}" class="auth-btn register">Регистрация</a>
                 <a href="{{ route('login') }}" class="auth-btn login">Войти</a>
                 <div class="user-icon">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
                     <i class="fas fa-user"></i>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import './bootstrap';
 import '../css/app.css'
 import './components/_header.js'
+import './components/_aside-filter.js'
 import './components/_swiper.js'
 import Alpine from 'alpinejs';
 
