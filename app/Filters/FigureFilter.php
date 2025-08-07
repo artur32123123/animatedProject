@@ -13,7 +13,7 @@ class FigureFilter
         $this->builder = $builder;
 
         foreach (request()->all() as $name => $value) {
-            dd( $name, $value);
+            // dd( $name);
             if (method_exists($this, $name) && !empty($value)) {
                 call_user_func_array([$this, $name], [$value]);
             }
@@ -41,14 +41,14 @@ class FigureFilter
         $this->builder->where('material', 'like', '%' . $value . '%');
     }
 
-    protected function label(string $value): void
+    protected function tag(string $value): void
     {
+        // dd($value);
         $this->builder->where('label', 'like', '%' . $value . '%');
     }
 
-    protected function figure_category_id(int $value): void
+    protected function category(int $value): void
     {
-        dd($value);
         $this->builder->where('figure_category_id', $value);
     }
 
@@ -57,9 +57,13 @@ class FigureFilter
         $this->builder->where('size', $value);
     }
 
-    protected function discount(int $value): void
+    protected function sale(int $value): void
     {
-        $this->builder->where('discount', '>=', $value);
+        if ($value == 1) {
+            $this->builder->where('discount', '>', 0);
+        } else {
+            $this->builder->where('discount', '=', 0);
+        }
     }
 
     protected function price(int $value): void
@@ -69,6 +73,6 @@ class FigureFilter
 
     protected function description(string $value): void
     {
-        $this->builder->where('description', 'like', '%' . $value . '%');
+        $this->builder->where('description', '>', $value);
     }
 }
